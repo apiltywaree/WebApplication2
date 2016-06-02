@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <Resource id="apil" type="javax.sql.DataSource">#Sun Apr 24 18:54:34 CDT 2016
+jdbcDriver=com.mysql.jdbc.Driver
+password=
+userName=root
+jdbcUrl=jdbc\:mysql\://localhost\:3306/TestDB?zeroDateTimeBehavior\=convertToNull
+</Resource>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCarTBTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    
+                     <h:outputLabel value="#{bundle.CreateCarTBLabel_color}" for="color" />
+                    <h:inputText id="color" value="#{carTBController.selected.color}" title="#{bundle.CreateCarTBTitle_color}" />
+                    <h:outputLabel value="#{bundle.CreateCarTBLabel_make}" for="make" />
+                    <h:inputText id="make" value="#{carTBController.selected.make}" title="#{bundle.CreateCarTBTitle_make}" required="true" requiredMessage="#{bundle.CreateCarTBRequiredMessage_make}"/>
+                    <h:outputLabel value="#{bundle.CreateCarTBLabel_miles}" for="miles" />
+                    <h:inputText id="miles" value="#{carTBController.selected.miles}" title="#{bundle.CreateCarTBTitle_miles}" />
+                    <h:outputLabel value="#{bundle.CreateCarTBLabel_model}" for="model" />
+                    <h:inputText id="model" value="#{carTBController.selected.model}" title="#{bundle.CreateCarTBTitle_model}" />
+                    <h:outputLabel value="#{bundle.CreateCarTBLabel_manufacturingYear}" for="manufacturingYear" />
+                    <h:inputText id="manufacturingYear" value="#{carTBController.selected.manufacturingYear}" title="#{bundle.CreateCarTBTitle_manufacturingYear}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{carTBController.create}" value="#{bundle.CreateCarTBSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{carTBController.prepareList}" value="#{bundle.CreateCarTBShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCarTBIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
