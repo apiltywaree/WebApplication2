@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCarTBTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewCarTBLabel_id}"/>
+                    <h:outputText value="#{carTBController.selected.id}" title="#{bundle.ViewCarTBTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewCarTBLabel_color}"/>
+                    <h:outputText value="#{carTBController.selected.color}" title="#{bundle.ViewCarTBTitle_color}"/>
+                    <h:outputText value="#{bundle.ViewCarTBLabel_make}"/>
+                    <h:outputText value="#{carTBController.selected.make}" title="#{bundle.ViewCarTBTitle_make}"/>
+                    <h:outputText value="#{bundle.ViewCarTBLabel_miles}"/>
+                    <h:outputText value="#{carTBController.selected.miles}" title="#{bundle.ViewCarTBTitle_miles}"/>
+                    <h:outputText value="#{bundle.ViewCarTBLabel_model}"/>
+                    <h:outputText value="#{carTBController.selected.model}" title="#{bundle.ViewCarTBTitle_model}"/>
+                    <h:outputText value="#{bundle.ViewCarTBLabel_manufacturingYear}"/>
+                    <h:outputText value="#{carTBController.selected.manufacturingYear}" title="#{bundle.ViewCarTBTitle_manufacturingYear}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{carTBController.destroyAndView}" value="#{bundle.ViewCarTBDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewCarTBEditLink}"/>
+                <br />
+                <h:commandLink action="#{carTBController.prepareCreate}" value="#{bundle.ViewCarTBCreateLink}" />
+                <br />
+                <h:commandLink action="#{carTBController.prepareList}" value="#{bundle.ViewCarTBShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewCarTBIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
